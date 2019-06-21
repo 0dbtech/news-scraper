@@ -27,9 +27,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // remote MongoDB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsdb";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://dbuser:dbuser123@ds241537.mlab.com:41537/heroku_smk7rwm8";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { 
+  useNewUrlParser: true 
+ // useMongoClient: true
+});
 
 //mongoose.connect("mongodb://localhost/newsdb", { useNewUrlParser: true });
 
